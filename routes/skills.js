@@ -6,7 +6,8 @@ const router = Router()
 router.get('/', skillsCtrl.index)
 router.get('/new', skillsCtrl.new);
 router.get('/:id', skillsCtrl.show);
-router.post('/skills',skillsCtrl.create)
+router.post('/',skillsCtrl.create)
+router.delete('/:id', skillsCtrl.delete);
 
 export {
   router
