@@ -11,17 +11,11 @@
   <h1>Skills</h1>
   <% if(error) { %>
     <h2><%= error %></h2>
+  <% } else { %>
+    <h2>Skill #<%= skill._id %></h2>
+    <h3><%= skill.text %></h3>
+    <p>Professional: <%= skill.professional ? 'Is a pro' : 'Is not a pro' %></p>
   <% } %>
-  <ul>
-    <% skills.forEach(function(skill) { %>
-      <li>
-        <a href="/skills/<%= skill._id %>"><%= skill.skill %></a>
-        -
-        <%= skill.level %> 
-          - 
-        <%= skill.professional ? 'is a pro' : 'not a pro' %>
-      </li>
-    <% }) %>
-  </ul>
+	<a href="/skills">Go back</a>
 </body>
 </html>

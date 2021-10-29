@@ -1,11 +1,11 @@
 const skills = [
   {skill: "git gatherer",level:6,professional:true,_id:3562},
-  {skill:'html hunter',level:3, professional:true,_id:7832},
-  {skill:'css champion',level:4,professional:true,_id:4365},
+  {skill:'html hercules',level:3, professional:true,_id:7832},
+  {skill:'css clarion',level:4,professional:true,_id:4365},
   {skill:'node nostradamus',level:4,professional:false,_id:6734},
-  {skill:'python proffesor',level:1,professional:false,_id:8723},
-  {skill:'json jehovah',level:1,professional:false,_id:1278},
-  {skill:'javascript joker',level:4,professional:true,_id:6954}
+  {skill:'python proffessor',level:1,professional:false,_id:8723},
+  {skill:'json derulo',level:1,professional:false,_id:1278},
+  {skill:'javascript jehovah',level:4,professional:true,_id:6954}
 ]
 
 const find = (conditions, callback) => {
@@ -23,6 +23,17 @@ const find = (conditions, callback) => {
     }
   }
 
+  const findById = (id, callback) =>{
+    try {
+      const skill = skills.find(skill => skill._id === parseInt(id))
+      if (!skill) throw new Error ('No skill was found')
+      return callback(null, skill)
+    } catch (error) {
+      console.log(error)
+      return callback(error, null)
+    }
+  }
 export{
-  find
+  find,
+  findById
 }
