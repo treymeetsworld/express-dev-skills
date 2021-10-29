@@ -33,7 +33,17 @@ const find = (conditions, callback) => {
       return callback(error, null)
     }
   }
+  function create(skill, callback) {
+    skills.skill = ''
+    skills.level = 1
+    skill.professional = false
+    skill._id = Math.floor(Math.random() * 10000)
+    skills.push(skill)
+    return callback(null, skill)
+  }
+  
 export{
   find,
-  findById
+  findById,
+  create
 }
